@@ -36,6 +36,7 @@
             {
             	
                 user_id = response.email;
+               //console.log(response);
                window.location.assign("registration/check_login.php?useremail='"+user_id+"'");    
 			  
             });

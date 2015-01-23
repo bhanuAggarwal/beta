@@ -108,12 +108,8 @@ Additional Information:
 
 <table>
 
-<tr id="las"><th>Register as:</th><td><select name="access_level" id="access_level" onchange=populate_events()>
- <option value="0">- Select -</option>
-  <option value="1" id="PARTICIPANT">PARTICIPANT</option>
-  <option value="2" id="VISITOR">VISITOR</option></select></td></tr>
-  
-<input type="hidden" id="name" name="name" value="<?php echo $name?>"/>
+
+<input type="text" id="name" name="name" value="<?php echo $name?>"/>
 <input type="hidden" id="email" name="email" value="<?php echo $email?>"/>
 <input type="hidden" id="gender" name="gender" value="<?php echo $gender?>"/>
 <tr id="colg"><th>Institute:</th><td><input type="text" name="colg" id="colg" ></td></tr>

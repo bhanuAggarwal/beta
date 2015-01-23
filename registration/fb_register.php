@@ -37,6 +37,11 @@ $name = $response["registration"]["name"];
 $email = $response["registration"]["email"];
 $gender = $response["registration"]["gender"];
 $location = $response["registration"]["location"];
+$college = $response["registration"]["college"];
+$mobile = $response["registration"]["mobile"];
+
+
+echo $name;
 }
 ?>
 
@@ -130,31 +135,29 @@ if (c!=d)
 	}	  
 	  
 }
+function submit() {
+  document.forms["reg"].submit();
+}
+
 </script>
 </head>
-<body>
+<body onload="submit()">
 
 Additional Information:
 
-<form name="reg" action="code_exec.php" onsubmit="return validateForm()" method="post">
+<form name="reg" id="reg" action="code_exec.php" onsubmit="return validateForm()" method="post">
 
 <table>
 
-<tr id="las"><th>Register as:</th><td><select name="access_level" id="access_level" onchange=populate_events()>
- <option value="0">- Select -</option>
-  <option value="1" id="PARTICIPANT">PARTICIPANT</option>
-  <option value="2" id="VISITOR">VISITOR</option></select></td></tr>
-  
-<input type="hidden" id="name" name="name" value="<?php echo $name?>"/>
+
+<input type="text" id="name" name="name" value="<?php echo $name?>"/>
 <input type="hidden" id="email" name="email" value="<?php echo $email?>"/>
-<tr id="pd"><th>Password:</th><td><input type="password" id="password" name="password"/></td></tr>
-<tr id="cpd"><th>Confirm Password:</th><td><input type="password" id="cpassword" name="cpassword"/></td></tr>
 <input type="hidden" id="gender" name="gender" value="<?php echo $gender?>"/>
-<tr id="colg"><th>Institute you are enrolled in:</th><td><input type="text" name="colg" id="colg" ></td></tr>
+<tr id="colg"><<td><input type="text" name="colg" id="colg" value="<?php echo $college?>"></td></tr>
 <input type="hidden" name="state" id="location" value="<?php echo $location?>"></td></tr>
 
 
-<tr id="mbno"><th>Mobile Number:</th><td><input type="number" min="10" id="phno" name="phno"/></td></tr>
+<tr id="mbno"><td><input type="text" min="10" id="phno" name="phno" value="<?php echo $mobile?>"/></td></tr>
 
 </table>
 <input type="submit" value="Register"/><input type="reset" value="Clear"/>

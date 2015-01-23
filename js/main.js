@@ -1,6 +1,9 @@
+var cat;
+
 function getEventList(category) {
 	$('#eventList').html("<li class='grid-sizer'></li>");
 	console.log(category);
+	cat = category;
 	$.ajax({
 		type:'GET',
 		data: {'category':category},
@@ -8,7 +11,7 @@ function getEventList(category) {
 		success: function(eventObject) {
 					//console.log(eventObject);
 					
-					$('#container').html('<header class="clearfix"><img src="images/Events.png" align="center" style="margin-left:28%; height:200x; width: 500px;"></header>');
+					$('#container').html('<button onClick="parent.location.reload(true)" style="width:10%; height:40px; background:black; position:fixed;padding:10px; border-radius:20px; color:white; top:7%" >Back</button><header class="clearfix"><img src="images/Events.png" align="center" style="margin-left:28%; height:200x; width: 500px;"></header>');
 					var key = 0;
 					eventList = JSON.parse(eventObject,function(id,name) {
 						//console.log(name);
@@ -32,6 +35,8 @@ function getEventList(category) {
 									'</figure>'+
 								'</li>'
 							);
+							var frameid = "#frame" + id;
+							
 							key = 1;
 
 
@@ -41,8 +46,7 @@ function getEventList(category) {
 						}
 					});
 					$('#event').remove();
-					new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
-					
+					new CBPGridGallery( document.getElementById( 'grid-gallery' ) );			
 				}
 	
 	});
@@ -54,6 +58,8 @@ function getEventList(category) {
 function getEventDetail(eventid) {
 	$.post("php/getdetail.php",{'eventID':eventid},function(dataObject) {
 		var frameid = "#frame" + eventid;
+		console.log("background-image","url(../../images/"+cat+".jpg)");
+		$(frameid).contents().find(".bg5").css("background-image","url(../images/"+cat+".jpg)");
 		details = JSON.parse(dataObject);
 		if(details['description'] != "") {
 			$(frameid).contents().find("#about").html(details['description']);	
@@ -74,3 +80,19 @@ function getEventDetail(eventid) {
 		}
 	});
 }
+
+function getUsername() {
+	$.get("php/username.php",{},function(object) {
+		if(object == '1') {
+			$('#username').html('<a href="register.html"><b >Registration</b><span></span></a>');		
+		}
+		else {
+
+		console.log(object);
+		//var username = JSON.parse(object);
+		console.log(username);
+		$('#username').html('<a href="./php/logout.php" style="bottom:20%"><b ><i style="font-size:30px" class="fa fa-power-off"></i>&nbsp;&nbsp;&nbsp;'+object+'</b></a>');	
+		}
+	});
+}
+getUsername();

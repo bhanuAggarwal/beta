@@ -630,6 +630,7 @@ article h2 { font-family: 'Lobster Two'; font-size: 40px; margin: 30px 0; line-h
 #fourth { background: url(../img/3.jpg) 50% 0 no-repeat fixed; }
 #third { background: url(../img/4.jpg) 50% 0 no-repeat fixed; }
 #fifth{ background: url(../img/5.jpg) 50% 0 no-repeat fixed; }
+#sixth{  background: url(../img/last.jpg) 10% bottom no-repeat fixed ; height:630px;background-position:center top;}
 
 
 /* Introduction */
@@ -675,9 +676,14 @@ height:300px; position:absolute;}
 #fifth article h2{margin: 5px 0;}
 #fifth article {  margin-left: 5%; text-shadow: 0 -1px 0 rgba(0,0,0,0.5); line-height: 1.5em; color: #fff; position: absolute; top: 0; }
 
+#sixth article {  background: repeat #333; color: #fff; padding: 10px 20px; margin: 50px 0 0 60%; text-shadow: 0 -1px 0 rgba(0,0,0,0.5); line-height: 1.5em; color: #fff; position: absolute; top: 0; box-shadow: 0 0 25px rgba(0,0,0,0.3); border: 1px solid rgba(150,150,150,0.1); width:800px; height:130px; opacity:0.5; margin-left:3%; margin-top:36%;}
+#sixth marquee{margin-left:30%; margin-top:-0%; opacity:0.5; width:400px;}
+#sixth  h1{font-size:40px; margin-left:25%;margin-top:7%;}
+#sixth article h1{margin: 5px 0; font-family:"bpicons"}
+
 
 /* The End */
-#theend .byebye { background: url(../img/theend.png) 40% 100px no-repeat fixed; height: 1000px; padding: 0; margin: 0; width: 100%; max-width: 1920px; position: relative; margin: 0 auto; }
+
 
 
 

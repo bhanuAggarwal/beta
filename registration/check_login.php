@@ -2,17 +2,15 @@
 
 include('connection.php');
 $user_id=$_GET['useremail'];
-echo $user_id;
 //$user_id="abc";
-$result=mysql_query("SELECT * FROM new_user WHERE email=".$user_id."");
-echo $result;
-//echo "SELECT * FROM new_user WHERE email=".$user_id."";
+$result=mysql_query("SELECT name FROM new_user WHERE email=".$user_id."");
+echo "SELECT name FROM new_user WHERE email=".$user_id."";
 
-//echo $result;
+echo $result;
 
 
 if($result!=""){
-	//MAIN PAGE
+	header("location:../");
 }
 else{
 	header("location: ./registration.php");

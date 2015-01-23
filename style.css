@@ -378,6 +378,7 @@ Secondary Fixed Navigation
     -moz-transition: opacity 0.2s;
     transition: opacity 0.2s;
   }
+
   .cd-secondary-nav li a:hover b, .cd-secondary-nav li a.active b {
     color: #f0eee1;
   }

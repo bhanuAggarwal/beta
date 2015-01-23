@@ -4,16 +4,17 @@ $user_id=$_GET['email'];
 $name=$_GET['name'];
 $gender=$_GET['gender'];
 
-$result=mysql_query("SELECT * FROM WHERE email=".$user_id."");
+$result=mysql_query("SELECT * FROM new_user WHERE email='".$user_id."'");
+echo $result;
 
-if($result!=""){
+if(isset($result)){
 	//MAIN PAGE
-}
-else{
-	header("location: ./googlesingup.php?name="+name+"&email="+user_id+"&gender="+gender+"");
+	header("location:../");
 	
 }
+else{
+	header("location: ./code_exec.php?name=".$name."&email=".$user_id."&gender=".$gender."");
+}
 
 ?>
 
-?>
